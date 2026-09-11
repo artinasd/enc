@@ -1,110 +1,257 @@
+import TelegramLink from "../components/TelegramLink";
+
+const features = [
+  {
+    number: "۰۱",
+    title: "مسیر کاملاً شخصی",
+    description:
+      "محتوای کلاس بر اساس سطح، هدف و نقاط قابل بهبود شما تنظیم می‌شود؛ نه یک برنامه یکسان برای همه.",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
+        <path d="M8 6h8M8 10h8" />
+      </svg>
+    ),
+  },
+  {
+    number: "۰۲",
+    title: "زمان‌بندی منعطف",
+    description:
+      "کلاس‌ها را با برنامه واقعی زندگی‌تان هماهنگ کنید و بدون رفت‌وآمد، از هر جا یاد بگیرید.",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8.5" />
+        <path d="M12 7v5l3.5 2" />
+      </svg>
+    ),
+  },
+  {
+    number: "۰۳",
+    title: "تمرکز روی نتیجه",
+    description:
+      "تمرین‌های کاربردی و بازخورد دقیق کمک می‌کنند اعتمادبه‌نفس و مهارت واقعی‌تان را قدم‌به‌قدم بسازید.",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m4 15 4-4 3 3 7-8" />
+        <path d="M18 6h2v2" />
+        <path d="M4 19h16" />
+      </svg>
+    ),
+  },
+];
+
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M15.5 10H4.5M9 4.5 3.5 10 9 15.5" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative px-6 py-24 sm:py-32 lg:px-8 bg-primary-50">
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-6">
-            تسلط به زبان انگلیسی، با تدریس خصوصی و آنلاین
-          </h1>
-          <p className="text-lg leading-8 text-gray-600 mb-10">
-            یادگیری زبان انگلیسی را با برنامه‌ای کاملاً شخصی‌سازی شده، زمانبندی منعطف و در محیطی راحت تجربه کنید. مسیر موفقیت شما از اینجا آغاز می‌شود.
-          </p>
-          <div className="flex items-center justify-center gap-x-6">
-            <a
-              href="https://t.me/yourtelegram_username"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-primary-600 px-8 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-all duration-300 transform hover:scale-105"
-            >
-              شروع مشاوره در تلگرام
-            </a>
+    <main className="site-shell">
+      <div className="ambient ambient-one" aria-hidden="true" />
+      <div className="ambient ambient-two" aria-hidden="true" />
+
+      <nav className="nav" aria-label="ناوبری اصلی">
+        <div className="container nav-inner">
+          <a className="brand" href="#top" aria-label="صفحه اصلی EnCourse">
+            <span className="brand-mark" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+            <span>EnCourse</span>
+          </a>
+
+          <div className="nav-links">
+            <a href="#benefits">مزایا</a>
+            <a href="#about">درباره مدرس</a>
+            <TelegramLink className="nav-cta">مشاوره رایگان</TelegramLink>
           </div>
         </div>
-      </section>
+      </nav>
 
-      {/* Features Section */}
-      <section className="py-24 sm:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-primary-600">مزایای کلاس‌های ما</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              چرا کلاس‌های خصوصی؟
-            </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              با تمرکز کامل بر نیازها و اهداف شما، یادگیری زبان دیگر خسته‌کننده و زمان‌بر نخواهد بود.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-primary-100">
-                  <svg className="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-                  </svg>
-                </div>
-                <dt className="text-xl font-semibold leading-7 text-gray-900">برنامه شخصی‌سازی شده</dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">محتوای آموزشی کاملاً بر اساس سطح فعلی و اهداف شما طراحی می‌شود تا بهترین نتیجه را در کمترین زمان بگیرید.</p>
-                </dd>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-primary-100">
-                  <svg className="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <dt className="text-xl font-semibold leading-7 text-gray-900">زمان‌بندی منعطف</dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">کلاس‌ها در زمان‌هایی که برای شما مناسب‌تر است برگزار می‌شوند، حتی در روزهای تعطیل یا ساعات غیر اداری.</p>
-                </dd>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-primary-100">
-                  <svg className="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                  </svg>
-                </div>
-                <dt className="text-xl font-semibold leading-7 text-gray-900">۱۰۰٪ آنلاین</dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">بدون نیاز به رفت و آمد، از هر کجای دنیا و در راحتی خانه خودتان در کلاس‌ها شرکت کنید.</p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
+      <section id="top" className="hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <span className="status-dot" aria-hidden="true" />
+              کلاس خصوصی آنلاین زبان انگلیسی
+            </div>
 
-      {/* Instructor Section */}
-      <section className="py-24 sm:py-32 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">درباره مدرس</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              با سال‌ها تجربه در زمینه آموزش زبان انگلیسی، من اینجا هستم تا به شما کمک کنم به اهداف زبانی خود دست پیدا کنید. تمرکز من بر روی روش‌های نوین و کاربردی است تا یادگیری برای شما لذت‌بخش و مؤثر باشد.
+            <h1>
+              انگلیسی را یاد بگیر؛
+              <span> برای زندگی واقعی.</span>
+            </h1>
+
+            <p className="hero-description">
+              کلاس‌های خصوصی و آنلاین برای فارسی‌زبان‌هایی که می‌خواهند با یک مسیر
+              شخصی، تمرین درست و بازخورد واقعی، انگلیسی را با اعتمادبه‌نفس استفاده کنند.
             </p>
-            <div className="mt-10 flex items-center gap-x-6">
-              <a
-                href="https://t.me/yourtelegram_username"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold leading-6 text-primary-600 hover:text-primary-500"
-              >
-                ارتباط با من <span aria-hidden="true">&larr;</span>
+
+            <div className="hero-actions">
+              <TelegramLink className="primary-button">
+                <span>شروع مشاوره</span>
+                <ArrowIcon />
+              </TelegramLink>
+              <a className="secondary-button" href="#benefits">
+                بیشتر بدانید
               </a>
+            </div>
+
+            <div className="hero-proof" aria-label="مزایای کلیدی">
+              <div>
+                <strong>۱ به ۱</strong>
+                <span>تمرکز کامل روی شما</span>
+              </div>
+              <div className="proof-divider" aria-hidden="true" />
+              <div>
+                <strong>آنلاین</strong>
+                <span>از هر جای دنیا</span>
+              </div>
+              <div className="proof-divider" aria-hidden="true" />
+              <div>
+                <strong>منعطف</strong>
+                <span>هماهنگ با برنامه شما</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-visual" aria-label="نمایی از مسیر یادگیری زبان">
+            <div className="visual-glow" aria-hidden="true" />
+            <div className="learning-card">
+              <div className="learning-topline">
+                <span>مسیر یادگیری شما</span>
+                <span className="live-pill"><i /> فعال</span>
+              </div>
+
+              <div className="progress-heading">
+                <div>
+                  <span>پیشرفت این هفته</span>
+                  <strong>۷۸٪</strong>
+                </div>
+                <div className="progress-track" aria-hidden="true">
+                  <span />
+                </div>
+              </div>
+
+              <div className="lesson-list">
+                <div className="lesson done">
+                  <span className="lesson-icon">✓</span>
+                  <div><strong>مکالمه روزمره</strong><small>تکمیل شد</small></div>
+                  <span className="lesson-badge">تمام</span>
+                </div>
+                <div className="lesson current">
+                  <span className="lesson-icon">→</span>
+                  <div><strong>Speaking & Confidence</strong><small>درس امروز</small></div>
+                  <span className="lesson-badge">امروز</span>
+                </div>
+                <div className="lesson">
+                  <span className="lesson-icon">03</span>
+                  <div><strong>Listening Skills</strong><small>جلسه بعدی</small></div>
+                  <span className="lesson-badge">بعدی</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="floating-note note-top">
+              <span className="note-icon">✦</span>
+              <div><strong>برنامه اختصاصی</strong><small>متناسب با هدف شما</small></div>
+            </div>
+            <div className="floating-note note-bottom">
+              <span className="avatar-dot">E</span>
+              <div><strong>بازخورد شخصی</strong><small>بعد از هر جلسه</small></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white">
-        <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-16 lg:px-8 text-center border-t border-gray-100">
-          <p className="text-center text-xs leading-5 text-gray-500">
-            &copy; {new Date().getFullYear()} کلیه حقوق محفوظ است. طراحی شده برای آموزش آنلاین زبان انگلیسی.
-          </p>
+      <section id="benefits" className="benefits section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="section-kicker">چرا EnCourse؟</span>
+              <h2>یادگیری خوب، باید <em>برای شما</em> ساخته شود.</h2>
+            </div>
+            <p>
+              هدف فقط تمام کردن یک کتاب نیست؛ می‌خواهیم انگلیسی بخشی طبیعی از زندگی و
+              ارتباطات روزمره‌تان شود.
+            </p>
+          </div>
+
+          <div className="feature-grid">
+            {features.map((feature) => (
+              <article className="feature-card" key={feature.number}>
+                <div className="feature-top">
+                  <span className="feature-icon">{feature.icon}</span>
+                  <span className="feature-number">{feature.number}</span>
+                </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+                <span className="card-line" aria-hidden="true" />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="about section">
+        <div className="container about-grid">
+          <div className="about-art" aria-hidden="true">
+            <div className="portrait-card">
+              <div className="portrait-letter">E</div>
+              <div className="portrait-lines"><i /><i /><i /></div>
+              <span className="portrait-caption">ENGLISH · CONFIDENCE · PROGRESS</span>
+            </div>
+            <div className="about-stat"><strong>۱:۱</strong><span>Private<br />Sessions</span></div>
+          </div>
+
+          <div className="about-copy">
+            <span className="section-kicker">درباره مدرس</span>
+            <h2>یک مدرس، یک مسیر،<br /><em>تمرکز روی شما.</em></h2>
+            <p>
+              در کلاس‌های خصوصی، هر دقیقه برای هدف شماست. با بررسی سطح فعلی، شناخت
+              نیازها و پیگیری مداوم، مسیر آموزشی به‌مرور دقیق‌تر و کاربردی‌تر می‌شود.
+            </p>
+            <p>
+              اگر آماده‌اید جدی‌تر روی زبان انگلیسی کار کنید، از یک گفت‌وگوی کوتاه شروع
+              می‌کنیم تا ببینیم بهترین نقطه شروع برای شما کجاست.
+            </p>
+            <TelegramLink className="text-link">
+              <span>با من در تلگرام صحبت کنید</span>
+              <ArrowIcon />
+            </TelegramLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div className="container final-card">
+          <div>
+            <span className="section-kicker">آماده‌ای شروع کنی؟</span>
+            <h2>اولین قدم، فقط یک پیام است.</h2>
+            <p>برای آشنایی و مشاوره، همین حالا در تلگرام پیام بده.</p>
+          </div>
+          <TelegramLink className="primary-button light-button">
+            <span>شروع گفتگو در تلگرام</span>
+            <ArrowIcon />
+          </TelegramLink>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="container footer-inner">
+          <a className="brand" href="#top" aria-label="بازگشت به ابتدای صفحه">
+            <span className="brand-mark" aria-hidden="true"><span /><span /><span /></span>
+            <span>EnCourse</span>
+          </a>
+          <p>© {new Date().getFullYear()} EnCourse · آموزش خصوصی آنلاین زبان انگلیسی</p>
+          <TelegramLink className="footer-link">ارتباط در تلگرام</TelegramLink>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
