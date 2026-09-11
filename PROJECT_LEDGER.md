@@ -1,37 +1,77 @@
 # Project Ledger
 
 ## Project Overview
-* **Project Name:** English Online Courses (1-on-1)
-* **Project Description:** A front-end only static website for an online 1-on-1 English teaching business, targeting Persian speakers. It serves as a modern landing page redirecting interested users to a Telegram account for direct contact.
-* **Current Version:** 1.0.0
-* **Current Development Phase:** Initial Release
+- **Project Name:** EnCourse
+- **Project Description:** A polished, Persian RTL landing page for an online 1-on-1 English teaching service. The site presents the teaching approach, benefits, and instructor positioning, then directs prospective students to Telegram for consultation.
+- **Current Version:** 1.1.0
+- **Current Development Phase:** Production Polish / Deployment
 
 ## Architecture & Technology Stack
-* **Architecture:** Static Website (Front-end only)
-* **Framework:** Next.js (App Router, static export configured)
-* **Language:** JavaScript
-* **Styling:** Tailwind CSS V4
-* **Typography:** Vazirmatn (Persian Google Font)
-* **Deployment Readiness:** Configured for static environments like GitHub Pages (`output: 'export'`, `images.unoptimized: true` in `next.config.mjs`)
+- **Architecture:** Static marketing website
+- **Framework:** Next.js 16 App Router with static export
+- **Language:** JavaScript
+- **Styling:** Tailwind CSS v4 plus custom CSS for the visual system
+- **Typography:** Vazirmatn
+- **Deployment:** GitHub Pages via GitHub Actions
+- **GitHub Pages base path:** `/enc` in CI; local development keeps the root path
 
 ## Folder Structure
-* `src/app/`: Contains the Next.js App Router core files (`layout.js`, `page.js`, `globals.css`).
-* `public/`: Static assets.
-* Root contains config files: `next.config.mjs`, `tailwind.config.mjs` (implicitly handled by Tailwind V4 in Next.js 15 template), `package.json`.
+- `src/app/layout.js` — root layout and SEO metadata
+- `src/app/page.js` — complete landing page composition
+- `src/app/globals.css` — visual system, responsive styles, components, and accessibility motion rules
+- `src/components/TelegramLink.js` — Telegram app deep-link CTA with web fallback
+- `public/` — static assets
+- `next.config.mjs` — static export, trailing slashes, GitHub Pages base path, and image configuration
+- `.github/workflows/nextjs.yml` — GitHub Pages build/deployment workflow
 
-## State of Components
-* **UI/UX:** Fully implemented in a single page (`src/app/page.js`). It features a modern, mobile-friendly RTL design with:
-  * Hero Section (with Telegram CTA)
-  * Features/Benefits Section
-  * Instructor/About Section
-  * Simple Footer
+## UI / UX
+The landing page has been redesigned around a premium, modern SaaS-style visual language while retaining Persian RTL usability.
+
+Current sections:
+- Sticky-style top navigation presentation with brand and consultation CTA
+- Hero with strong value proposition and primary/secondary CTAs
+- Visual learning-progress card with supporting floating UI details
+- Proof strip highlighting 1-on-1, online, and flexible learning
+- Benefits section with three reusable feature cards
+- Instructor/about section with editorial visual treatment
+- Final Telegram conversion CTA
+- Minimal footer with brand and Telegram contact
+
+Responsive behavior is implemented for desktop, tablet, and mobile layouts. Reduced-motion preferences are respected.
+
+## Telegram Contact
+- **Username:** `EnCourseAdmin`
+- **Primary app link:** `tg://resolve?domain=EnCourseAdmin`
+- `TelegramLink` attempts to open the Telegram application directly.
+- If the app does not open, it falls back to `https://t.me/EnCourseAdmin` after a short delay.
+- All consultation/contact CTAs use this shared component.
+
+## GitHub Pages Deployment
+The previous deployment failed before dependency installation because `actions/configure-pages@v5` could not find an enabled Pages site.
+
+The workflow was updated to:
+- Explicitly use Node 24
+- Use `npm ci`
+- Run ESLint before the build
+- Enable GitHub Pages through `configure-pages` using `enablement: true`
+- Build the static export with `npm run build`
+- Upload `./out`
+- Deploy through `actions/deploy-pages@v4`
+
+`next.config.mjs` sets `basePath: '/enc'` only in GitHub Actions so assets and navigation work correctly when served from the repository project path.
 
 ## Current Status
-* **Completed Tasks:** Scaffolded Next.js project, setup Tailwind & RTL structure, implemented responsive landing page UI, configured for static export.
-* **Next Planned Task:** N/A (Project is considered feature-complete for the current scope).
-* **Known Issues / Tech Debt:** None at this time. Only frontend is implemented as explicitly requested. No backend or database is necessary for this static landing page.
+- **Completed:** Initial scaffold, RTL structure, premium UI redesign, responsive styling, SEO metadata, Telegram deep-link integration, GitHub Pages workflow repair, GitHub Pages base-path configuration.
+- **Current Task:** Final deployment verification.
+- **Next Planned Task:** Visual QA on the live GitHub Pages site after the workflow succeeds.
+- **Known Issues / Tech Debt:** No known application-level blockers. GitHub repository Pages settings may still require the repository's Pages source to permit GitHub Actions; the workflow now requests enablement automatically where GitHub permits it.
 
 ## Important Implementation Notes
-* Since the requirement explicitly asks for a static GitHub pages deployment, Next.js image optimization is disabled to allow `next build` to successfully export HTML files.
-* The application runs purely on the client side for rendering CSS/HTML since it's statically exported. No API routes or dynamic server components are used.
-* The Telegram CTA link is set to `https://t.me/yourtelegram_username` which acts as a placeholder meant to be customized by the owner.
+- The project is intentionally front-end only; no backend or database is required for the current scope.
+- The page uses static export and does not depend on server runtime features.
+- Images are unoptimized because GitHub Pages serves the exported static site.
+- The Telegram contact component is client-side because launching a custom application URI and providing a fallback requires browser interaction.
+- Avoid replacing the custom visual system with a generic component library unless a future requirement justifies it.
+
+## Continuation Notes
+For future changes, inspect the existing visual system in `globals.css` and preserve the current design language. Prefer targeted component-level improvements over rebuilding the page from scratch. Keep all contact CTAs wired through `TelegramLink.js` so the Telegram username remains centralized and consistent.
