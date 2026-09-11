@@ -8,20 +8,22 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata = {
-  title: "آموزش زبان انگلیسی - کلاس‌های خصوصی آنلاین",
-  description: "کلاس‌های آنلاین و خصوصی زبان انگلیسی با بهترین کیفیت و پشتیبانی",
+  title: "EnCourse | کلاس خصوصی آنلاین زبان انگلیسی",
+  description:
+    "کلاس‌های خصوصی و آنلاین زبان انگلیسی با مسیر آموزشی شخصی‌سازی‌شده، زمان‌بندی منعطف و تمرکز بر مکالمه و اعتمادبه‌نفس.",
+  keywords: ["آموزش زبان انگلیسی", "کلاس خصوصی زبان", "کلاس آنلاین زبان", "EnCourse"],
+  openGraph: {
+    title: "EnCourse | انگلیسی را برای زندگی واقعی یاد بگیر",
+    description: "کلاس خصوصی آنلاین زبان انگلیسی، متناسب با هدف و مسیر شما.",
+    type: "website",
+    locale: "fa_IR",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="fa"
-      dir="rtl"
-      className={`${vazirmatn.variable} font-sans scroll-smooth`}
-    >
-      <body className="antialiased min-h-screen bg-gray-50 text-gray-900 flex flex-col font-sans">
-        {children}
-      </body>
+    <html lang="fa" dir="rtl" className={`${vazirmatn.variable} font-sans`}>
+      <body className="antialiased min-h-screen font-sans">{children}</body>
     </html>
   );
 }
