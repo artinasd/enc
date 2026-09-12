@@ -57,13 +57,13 @@ export default function Home() {
 
       <nav className="nav" aria-label="ناوبری اصلی">
         <div className="container nav-inner">
-          <a className="brand" href="#top" aria-label="صفحه اصلی EnCourse">
+          <a className="brand" href="#top" aria-label="صفحه اصلی UniEnglish">
             <span className="brand-mark" aria-hidden="true">
               <span />
               <span />
               <span />
             </span>
-            <span>EnCourse</span>
+            <span>UniEnglish</span>
           </a>
 
           <div className="nav-links">
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div>
-              <span className="section-kicker">چرا EnCourse؟</span>
+              <span className="section-kicker">چرا UniEnglish؟</span>
               <h2>یادگیری خوب، باید <em>برای شما</em> ساخته شود.</h2>
             </div>
             <p>
@@ -246,9 +246,9 @@ export default function Home() {
         <div className="container footer-inner">
           <a className="brand" href="#top" aria-label="بازگشت به ابتدای صفحه">
             <span className="brand-mark" aria-hidden="true"><span /><span /><span /></span>
-            <span>EnCourse</span>
+            <span>UniEnglish</span>
           </a>
-          <p>© {new Date().getFullYear()} EnCourse · آموزش خصوصی آنلاین زبان انگلیسی</p>
+          <p>© {new Date().getFullYear()} UniEnglish · آموزش خصوصی آنلاین زبان انگلیسی</p>
           <TelegramLink className="footer-link">ارتباط در تلگرام</TelegramLink>
         </div>
       </footer>
